@@ -1,0 +1,13 @@
+# Bioinformatics Data Files (ไฟล์พวกนี้ใหญ่เกินไปสำหรับ GitHub)
+*.fastq
+*.fq.gz
+*.bam
+*.bai
+*.sam
+*.vcf
+
+# Environment & System (ไม่เก็บโปรแกรมที่ติดตั้งไว้)
+miniconda3/
+.conda/
+__pycache__/
+.DS_Store
