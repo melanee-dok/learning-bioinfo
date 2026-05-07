@@ -1,0 +1,14 @@
+# Search and filter
+- `grep "zcat" log_day02.txt` ใช้หาบรรทัดที่มีคำว่า zcat ในไฟล์ log_day02.txt 
+- `grep -c "sample" log_day02.txt` ใช้นับบรรทัดที่มีคำว่า sample ในไฟล์ log_day02.txt
+- `grep -i "Sample" log_day02.txt` ใช้หาบรรทัดที่มีคำว่าคำว่า zcat ในไฟล์ log_day02.txt โดยไม่สนว่าเป็นพิมพ์ใหญ่หรือเล็ก
+- `grep -c -i "Sample" log_day02.txt` ใช้นับบรรทัดที่มีคำว่า sample ในไฟล์ log_day02.txt โดยไม่สนว่าเป็นพิมพ์ใหญ่หรือเล็ก
+- `grep -A 2 "zcat" log_day02.txt`  ใช้หาบรรทัดที่มีคำว่าคำว่า zcat ในไฟล์ log_day02.txt โดยจะแสดงเฉพาะบรรทัดที่มีคำนั้นๆ และ 2 บรรทัดต่อจากนั้น 
+- `zcat sample001.fastq.gz | grep "@" | head -n 5` ใช้ส่องข้อมูลในไฟล์ที่ถูกบบีบอัด ตามด้วยหา @ และแสดงแค่ 5 อันดับแรก
+- `zcat sample001.fastq.gz | grep -c "@"` ใช้นับบรรทัดที่มี @ ในไฟล์ log_day02.txt
+- **ในที่นี้จำนวนที่นับได้จะหมายถึง Total read**
+- `zcat sample001.fastq.gz | grep -c "AAAAA"` ใช้นับบรรทัดที่มี AAAAA ในไฟล์ log_day02.txt
+- **เพื่อดูว่ามี Poly-A tail หรรือลำดับเบสซ้ำๆที่ต้องตัดทิ้งไหม**
+- `zcat sample001.fastq.gz | grep "^AAAAA" | wc -l` ใช้นับบรรทัดที่มี AAAAA ขึ้นต้น ในไฟล์ log_day02.txt 
+- `zcat sample001.fastq.gz | grep -c "^AAAAA"` ใช้นับบรรทัดที่มี AAAAA ขึ้นต้น ในไฟล์ log_day02.txt
+- 2 คำสั่งสุดท้ายให้ผลลัพธ์เดียวกัน

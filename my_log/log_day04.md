@@ -1,0 +1,45 @@
+# Bash script (basic) 
+- `nano run_qc.sh` ใช้สร้างไฟล์ run_qc.sh และใส่ข้อความโดยใช้โปรแกรม nano ที่มีอยู่แล้วใน ubuntu
+- `chmod +x run_qc.sh` อนุญาติให้ run ไฟลล์นี้ได้ 
+- `./run_qc.sh` run ไฟล์นี้
+- `touch run_qccopy.sh` ใช้สร้างไฟล์ run_qccopy.sh
+- `code run_qccopy.sh` เปิดไฟล์ run_qccopy.sh ใน vs code
+- `chmod +x run_qccopy.sh`อนุญาติให้ run ไฟลล์นี้ได้
+- `./run_qccopy.sh` run ไฟล์นี้
+- 
+- **คำสั่งใน run_qc.sh และ run_qccopy.sh**
+- #!/bin/bash
+- 
+- #--- ส่วนที่ 1: เตรียมตัวแปร ---
+- FILE="sample001.fastq.gz"
+- REPORT="summary_report.md"
+- 
+- echo "🚀 เริ่มต้นการวิเคราะห์ไฟล์: $FILE"
+- 
+- #--- ส่วนที่ 2: รันคำสั่งนับจำนวน (ที่คุณเรียนไป) ---
+- echo "1. กำลังนับจำนวน Read ทั้งหมด..."
+- TOTAL=$(zcat $FILE | grep -c "@")
+- 
+- echo "2. กำลังนับจำนวนลำดับเบสที่ขึ้นต้นด้วย AAAAA..."
+- POLY_A=$(zcat $FILE | grep -c "^AAAAA")
+- 
+- #--- ส่วนที่ 3: บันทึกผลลงไฟล์รายงานอัตโนมัติ ---
+- echo "# สรุปผลการวิเคราะห์ไฟล์ $FILE" > $REPORT
+- echo "- จำนวน Read ทั้งหมด: $TOTAL" >> $REPORT
+- echo "- จำนวนที่ขึ้นต้นด้วย AAAAA: $POLY_A" >> $REPORT
+- 
+- echo "✅ เสร็จสิ้น! ตรวจสอบผลได้ที่ไฟล์ $REPORT"
+- 
+- **ผลลัพธ์**
+- melaneed@Crispr:~/learn/bioinformatic/week001$ ./run_qc.sh
+- 🚀 เริ่มต้นการวิเคราะห์ไฟล์: sample001.fastq.gz
+- 1. กำลังนับจำนวน Read ทั้งหมด...
+- 2. กำลังนับจำนวนลำดับเบสที่ขึ้นต้นด้วย AAAAA...
+- ✅ เสร็จสิ้น! ตรวจสอบผลได้ที่ไฟล์ summary_report.md
+- melaneed@Crispr:~/learn/bioinformatic/week001$ cat summary_report.md
+- #สรุปผลการวิเคราะห์ไฟล์ sample001.fastq.gz
+- จำนวน Read ทั้งหมด: 1364632
+- จำนวนที่ขึ้นต้นด้วย AAAAA: 2590
+- 
+- `mv * week001/` ย้ายไฟล์ทั้งหมดไปที่โฟลเดอร์ week001
+- `mv log* week001/` ย้ายไฟล์ที่ขึ้รต้นด้วย log ไปที่โฟลเดอร์ week001

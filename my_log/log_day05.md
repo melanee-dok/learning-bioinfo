@@ -1,0 +1,16 @@
+# Install Conda and Samtools
+- `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh` ใช้ดาวน์โหลด conda
+- `bash Miniconda3-latest-Linux-x86_64.sh` ใช้สั่งติดตั้ง conda
+- `source ~/.bashrc` ใช้รีเฟรชหน้าจอหลังติดตั้งโปรแกรมใหม่ (สามารถใช้การปิด-เปิด terminal แทนได้)
+- `conda --version` ตรวจสอบเวอร์ชั่นของโปรแกรม conda
+- `conda create -n bioinfo` ใช้สร้างห้องชื่อ bioinfo 
+- `conda activate bioinfo` เปิดการทำงานของ bioinfo
+- `conda install -c bioconda samtools` ติดตั้ง samtools
+- `samtools --version` ตรวจสอบเวอร์ชั่นของ samtools
+- `samtools --help` ดูความสามารถของ samtools
+- `samtools flagstat sample002.bam` ใช้ดูสถิติจำนวน Read 
+- **ผลลัพธ์**
+- - Total reads 1,366,496
+- - Primary reads 1,364,632
+- - Secondary reads 1,864
+- - Mapping rate 89.19% (High quality data)

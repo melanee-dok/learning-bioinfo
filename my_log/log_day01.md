@@ -1,0 +1,27 @@
+# Navigation and file management
+- `pwd` ดูว่าตอนนี้เราอยู่ที่ไหน
+- `ls -lh` ดูว่าที่ๆเราอยู่มีอะไรบ้าง แบบละเอียด
+- `mkdir -p learn/bioinformatic` ใช้สร้างโฟลเดอร์ bioinformatic ภายในโฟลเดอร์ learn
+- **ถ้าพิมพ์ `/` กลับด้าน เช่น `mkdir -p learn\bioinformatic` จะได้โฟลเดอร์ learnbioinformatic**
+- `mv learnbioinformatic learn` เปลี่ยนชื่อโฟลเดอร์ learnbioinformatic เป็น learn
+- `cd learn/` เข้าสู่โฟลเดอร์ learn
+- `mkdir bioinformatic` 
+- `cd bioinformatic/` สร้างโฟลเดอร์ bioinformatic
+- `cd ..` ถอยหลังออกมา 1 โฟลเดอร์
+- `ls -l` ดูว่าที่ๆเราอยู่มีอะไรบ้าง แบบละเอียด แสดงขนาดไฟล์เป็น Bytes
+- `ls -a` ดูว่าที่ๆเราอยู่มีไฟล์ที่ซ่อนไว้ไหม
+- `mkdir -p bioinformatic/week01` ใช้สร้างโฟลเดอร์ week01 ภายในโฟลเดอร์ bioinformatic
+- `cd bioinformatic/week01/` เข้าสู่โฟลเดอร์ week01
+- `cd ~` ไปที่โฟลเดอร์ หลัก
+- `explorer.exe .` เปิดโฟลเดอร์ ใน window
+- `cd learn/bioinformatic/week01/`
+- `cp "E:\Back up 260301\Work\PGT\00 DATA\02 LAB Part\02 Data\2025\run no.250927-01\250928_MN01160_0162_A000HC37GF\Alignment_1\20250928_180909\Fastq\250927049-EVA-PARKS-1_S1_L001_R1_001.fastq.gz" .` ใช้ copy file มาไว้ที่นี่
+- `mv sample001.fastq.gz /home/melaneed/learn/bioinformatic/` ย้าย sample001.fastq.gz ไปที่โฟลเดอร์ "bioinformatic"
+- `mv sample001.fastq.gz /home/melaneed/learn/bioinformatic/week01/ ย้าย sample001.fastq.gz` ไปที่โฟลเดอร์ "week01"
+- `cp sample001.fastq.gz` **คำสั่งไม่สมบูรณ์** 
+- **คำสั่งนี้จะขึ้นแจ้งเตือนเนื่องจากในโฟลเดอร์ นี้มี file ชื่อนี้อยู่แล้ว**
+- `cp sample001.fastq.gz sample001copy.fastq.gz` ใช้ copy sample001.fastq.gz โดยให้วางและเปลี่ยนชื่อเป็น sample001copy.fastq.gz
+- `cp sample001.fastq.gz sample001copy.fastq.gz` ใช้ copy sample001.fastq.gz โดยให้ทับ sample001copy.fastq.gz
+- `cp -i sample001.fastq.gz sample001copy.fastq.gz` ใช้ copy sample001.fastq.gz โดยให้ทับ sample001copy.fastq.gz แบบมีการแจ้งเตือนก่อนวางทับ
+- `cp -r week01 week01copy` ใช้ copyโฟลเดอร์ "week01" และวางเป็นชื่อโฟลเดอร์ "week01copy"
+- `history | tail -n 59 > log_day01.txt` ใช้บันทึกประวัติคำสั่ง 59 บรรทัดสุดท้ายในไฟล์ชื่อ log_day01.txt
